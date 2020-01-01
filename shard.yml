@@ -1,0 +1,25 @@
+name: bitcoinvaluebot
+version: 0.1.0
+
+authors:
+  - arubinofaux <arubinofaux@gmail.com>
+
+targets:
+  jobs:
+    main: app/mosquito.cr
+
+crystal: 0.32.1
+
+license: MIT
+
+dependencies:
+  mosquito:
+    github: robacarp/mosquito
+  twitter-crystal:
+    github: mamantoha/twitter-crystal
+  crest:
+    github: mamantoha/crest
+  moola:
+    github: dorkrawk/moola
+  redis:
+    github: stefanwille/crystal-redis
