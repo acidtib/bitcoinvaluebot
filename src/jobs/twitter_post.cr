@@ -1,5 +1,5 @@
 class TwitterPostJob < Mosquito::PeriodicJob
-  run_every 1.minute
+  run_every 60.minute
 
   def perform
     coins = BVB::Services::CoinMarketCap.coins
