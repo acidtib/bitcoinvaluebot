@@ -1,7 +1,6 @@
 require "mosquito"
 require "crest"
 require "json"
-require "moola"
 require "redis"
 require "twitter-crystal"
 

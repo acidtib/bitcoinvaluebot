@@ -19,7 +19,5 @@ dependencies:
     github: mamantoha/twitter-crystal
   crest:
     github: mamantoha/crest
-  moola:
-    github: dorkrawk/moola
   redis:
     github: stefanwille/crystal-redis

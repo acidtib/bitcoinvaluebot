@@ -17,7 +17,7 @@ class TwitterPostJob < Mosquito::PeriodicJob
       coins.each do |coin|
         coin_symbol = coin["symbol"]
         coin_price = coin["price"].to_f
-        coin_price_formatted = Moola.new(coin_price).format.to_s
+        coin_price_formatted = BVB::Services::Money.new(coin_price)
         coin_percent_change1h = coin["percent_change_1h"]
         coin_percent_change1h_rounded = coin_percent_change1h.to_f.round(2).to_s
         coin_trend = trend(coin_percent_change1h)
@@ -33,7 +33,7 @@ class TwitterPostJob < Mosquito::PeriodicJob
 
       last_hour_diff = percent_diff(last_hourly_price, sum_of_forks)
 
-      fork_lines = "Current Bitcoin Price\nAll Forks = #{Moola.new(sum_of_forks).format} #{trend(last_hour_diff.to_s)} #{last_hour_diff}%\n--\n" + coin_lines
+      fork_lines = "Current Bitcoin Price\nAll Forks = #{BVB::Services::Money.new(sum_of_forks)} #{trend(last_hour_diff.to_s)} #{last_hour_diff}%\n--\n" + coin_lines
 
       REDIS.set("hourlysum_of_forks", sum_of_forks.to_s)
       REDIS.set("hourly_archive", archive)

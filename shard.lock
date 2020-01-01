@@ -8,10 +8,6 @@ shards:
     github: mamantoha/http-client-digest_auth
     version: 0.2.0
 
-  moola:
-    github: dorkrawk/moola
-    commit: fdc6bb5ad922473af41b3edfab82133e71b8ddc7
-
   mosquito:
     github: robacarp/mosquito
     version: 0.6.0
