@@ -54,6 +54,6 @@ class TwitterPostJob < Mosquito::PeriodicJob
   end
 
   def percent_diff(old_price, new_price)
-    100.0 * ((new_price - old_price) / old_price).round(2)
+    (100.0 * ((new_price - old_price) / old_price)).round(2)
   end
 end
