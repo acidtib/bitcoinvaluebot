@@ -12,4 +12,8 @@ COOLLISTOFCOINS = "BTC,BCH,BSV"
 require "../src/services/*"
 require "../src/jobs/*"
 
+Mosquito.configure do |settings|
+  settings.redis_url = ENV["REDIS_URL"]
+end
+
 Mosquito::Runner.start
