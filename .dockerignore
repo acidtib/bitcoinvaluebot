@@ -1,0 +1,9 @@
+.DS_Store
+.git
+.dockerignore
+.env
+Dockerfile
+Dockerfile.dev
+README.md
+/lib
+/build/*

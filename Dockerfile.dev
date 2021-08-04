@@ -1,0 +1,8 @@
+FROM crystallang/crystal:1.1.1
+
+WORKDIR /app
+ADD . /app
+
+RUN shards install
+
+CMD crystal run ./app/jobs.cr

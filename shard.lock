@@ -1,26 +1,34 @@
-version: 1.0
+version: 2.0
 shards:
   crest:
-    github: mamantoha/crest
-    version: 0.23.1
+    git: https://github.com/mamantoha/crest.git
+    version: 0.27.1
+
+  habitat:
+    git: https://github.com/luckyframework/habitat.git
+    version: 0.4.7
 
   http-client-digest_auth:
-    github: mamantoha/http-client-digest_auth
-    version: 0.2.0
-
-  mosquito:
-    github: robacarp/mosquito
+    git: https://github.com/mamantoha/http-client-digest_auth.git
     version: 0.6.0
 
+  http_proxy:
+    git: https://github.com/mamantoha/http_proxy.git
+    version: 0.8.0
+
+  mosquito:
+    git: https://github.com/robacarp/mosquito.git
+    version: 0.11.0
+
   pool:
-    github: ysbaddaden/pool
-    version: 0.2.3
+    git: https://github.com/ysbaddaden/pool.git
+    version: 0.2.4
 
   redis:
-    github: stefanwille/crystal-redis
-    version: 2.5.2
+    git: https://github.com/stefanwille/crystal-redis.git
+    version: 2.7.0
 
   twitter-crystal:
-    github: mamantoha/twitter-crystal
-    version: 0.4.0
+    git: https://github.com/mamantoha/twitter-crystal.git
+    version: 0.5.3
 

@@ -6,9 +6,9 @@ authors:
 
 targets:
   jobs:
-    main: app/mosquito.cr
+    main: app/jobs.cr
 
-crystal: 0.32.1
+crystal: ">= 0.36.0"
 
 license: MIT
 

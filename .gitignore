@@ -3,6 +3,10 @@
 /bin/
 /.shards/
 *.dwarf
+.DS_Store
 
 dump.rdb
 .env
+
+/build/*
+!/build/.keep
