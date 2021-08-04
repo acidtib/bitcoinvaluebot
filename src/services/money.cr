@@ -4,8 +4,7 @@ module BVB::Services
     end
 
     def self.new(amount)
-      clean_amount = clean_init_amount(amount)
-      format(clean_amount)
+      format(clean_init_amount(amount))
     end
 
     def self.format(amount)
@@ -15,9 +14,8 @@ module BVB::Services
       amount_str = amount.to_s
       unit_str = amount_str[0, amount_str.size - subunit_shift]
       subunit_str = amount_str[amount_str.size - subunit_shift, amount_str.size]
-      formatted_value = "#{unit_str}#{decimal_mark}#{subunit_str}"
-
-      currency_symbol + formatted_value
+      pre_formatted_value = "#{unit_str}#{decimal_mark}#{subunit_str}"
+      currency_symbol + pre_formatted_value.to_f.format(decimal_places: 2).to_s
     end
 
     protected def self.clean_init_amount(amount)

@@ -19,7 +19,7 @@ class TwitterPostJob < Mosquito::PeriodicJob
         coin_price = coin["price"].to_f
         coin_price_formatted = BVB::Services::Money.new(coin_price)
         coin_percent_change1h = coin["percent_change_1h"]
-        coin_percent_change1h_rounded = coin_percent_change1h.to_f.round(2).to_s
+        coin_percent_change1h_rounded = coin_percent_change1h.to_f.round(2).format(decimal_places: 2).to_s
         coin_trend = trend(coin_percent_change1h)
 
         new_line = "$#{coin_symbol} = #{coin_price_formatted} #{coin_trend} #{coin_percent_change1h_rounded}%\n"
@@ -31,7 +31,7 @@ class TwitterPostJob < Mosquito::PeriodicJob
 
       last_hourly_price = REDIS.get("hourlysum_of_forks").to_s.to_f
 
-      last_hour_diff = percent_diff(last_hourly_price, sum_of_forks)
+      last_hour_diff = percent_diff(last_hourly_price, sum_of_forks).format(decimal_places: 2)
 
       fork_lines = "Current Bitcoin Price\nAll Forks = #{BVB::Services::Money.new(sum_of_forks)} #{trend(last_hour_diff.to_s)} #{last_hour_diff}%\n--\n" + coin_lines
 
