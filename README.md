@@ -1,6 +1,6 @@
 # bitcoinvaluebot
 
-Twitter bot reporting Bitcoins hourly price
+Twitter bot reporting Bitcoin forks hourly price
 
 ## Contributing
 
