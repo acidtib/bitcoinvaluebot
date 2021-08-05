@@ -6,3 +6,6 @@ docker.run:
 
 docker.build.prod:
 	docker build -t arubinofaux/bvb_services:latest .
+
+docker.build.gcloud:
+	gcloud builds submit --tag gcr.io/arubinofaux/bvb_services
